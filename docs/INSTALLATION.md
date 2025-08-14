@@ -1,5 +1,3 @@
-
-
 # Installation Guide
 
 Welcome to the TortoSpoof installation guide! Follow these steps to get TortoSpoof running on your Mac and iPhone.
@@ -7,28 +5,17 @@ Welcome to the TortoSpoof installation guide! Follow these steps to get TortoSpo
 ## Prerequisites
 
 - **macOS** (tested on macOS 13+)
-- **Python 3.9 or later**
-- **Homebrew** (for package installation)
+- **Homebrew** (optional if you run the install script; the script will warn if missing)
 - **Developer Mode enabled on the iPhone**
 - **USB cable** to connect iPhone to Mac
 
 ---
 
-## Step 1: Install Required Tools
+## Step 1: Install Homebrew (Optional)
 
-If you don't have Homebrew installed, install it first:
+If you don't have Homebrew installed and want to manage packages manually, install it first:
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Install Python 3:
-```shell
-brew install python3
-```
-
-Install `pymobiledevice3`:
-```shell
-pip3 install pymobiledevice3
 ```
 
 ---
@@ -41,22 +28,24 @@ pip3 install pymobiledevice3
 
 ---
 
-## Step 3: Clone the Repository
+## Step 3: Clone the Repository and Run the Installer
 
 ```shell
-git clone https://github.com/<yourusername>/TortoSpoof.git
+git clone https://github.com/Tortoragola/TortoSpoof.git
 cd TortoSpoof
+./install.sh
+source ~/.zshrc
 ```
+The `install.sh` script will handle installing Python, `pymobiledevice3`, and other dependencies, and it will automatically add the GPS spoofing commands to your `.zshrc`.
 
 ---
 
-## Step 4: Set Up Aliases
+## Step 4: Test the Connection
 
-For quick commands, set up aliases as described in [docs/ALIASES.md](ALIASES.md).
-
----
-
-## Step 5: Test the Connection
+Before testing, make sure to source your shell configuration:
+```shell
+source ~/.zshrc
+```
 
 Verify your iPhone is detected:
 ```shell
@@ -66,7 +55,7 @@ Your device should appear in the list.
 
 ---
 
-## Step 6: First Spoof Test
+## Step 5: First Spoof Test
 
 Try a test spoof (example coordinates for Istanbul):
 ```shell

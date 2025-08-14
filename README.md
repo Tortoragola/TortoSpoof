@@ -13,10 +13,11 @@ TortoSpoof is a simple, effective GPS location spoofing tool for iPhones, design
 ## Requirements
 
 - macOS (for running the tool)
-- Python 3.8+
 - Xcode Command Line Tools (for device communication)
 - An iPhone (iOS 13 or later recommended)
 - USB cable for device connection
+
+> **Note:** All required dependencies are automatically handled by the `install.sh` script.
 
 ## Installation
 
@@ -25,9 +26,10 @@ TortoSpoof is a simple, effective GPS location spoofing tool for iPhones, design
    git clone https://github.com/yourusername/TortoSpoof.git
    cd TortoSpoof
    ```
-2. **Install dependencies:**
+2. **Install dependencies and set up environment:**
    ```bash
-   pip install -r requirements.txt
+   ./install.sh
+   source ~/.zshrc
    ```
 3. **(Optional) Grant necessary permissions:**  
    Some features may require accessibility or device permissions.
@@ -35,15 +37,16 @@ TortoSpoof is a simple, effective GPS location spoofing tool for iPhones, design
 ## Usage
 
 1. **Connect your iPhone to your Mac via USB.**
-2. **Start TortoSpoof:**
+2. **Spoof your location using the following commands:**
    ```bash
-   python tortospoof.py
+   spoof <LAT> <LON>         # Set your iPhone's location to the given latitude and longitude
+   spoof clear               # Clear the spoofed location and restore real GPS
+   spoof stop                # Stop spoofing and exit
    ```
-3. **Select or input your desired location coordinates.**
-4. **Enable keep-awake and other features as needed via the interface or command line options.**
-5. **To stop spoofing, simply exit the program.**
 
-> **Note:** For advanced usage, such as looping locations or scripting, see the [docs/USAGE.md](docs/USAGE.md) file.
+> **Note:** While spoofing is active, TortoSpoof automatically keeps your Mac awake to ensure uninterrupted spoofing.
+
+For advanced usage, such as looping locations or scripting, see the [docs/USAGE.md](docs/USAGE.md) file.
 
 ## License
 

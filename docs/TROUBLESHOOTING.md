@@ -16,10 +16,10 @@ Remote Service Discovery (RSD) can fail due to several reasons:
 - The iOS device is locked.
 - Developer Mode is turned off on the device.
 
-To resolve this, try clearing and restarting the spoof service:
+To resolve this, try clearing and restarting the spoof service with new coordinates:
 
 ```shell
-spoof clear && spoof start
+spoof clear && spoof <LAT> <LON>
 ```
 
 Ensure your device is unlocked and Developer Mode is enabled before attempting to connect.
@@ -50,7 +50,4 @@ If the location does not update as expected:
 
 ## Mac goes to sleep during spoofing
 
-If your Mac goes to sleep during spoofing, it can interrupt the process. To prevent this:
-
-- Use the `keepawake` tool to keep your Mac awake during spoofing.
-- You can also include `keepawake` in your alias or script to automate this behavior.
+If your Mac goes to sleep during spoofing, it can interrupt the process. To prevent this, note that the spoof command automatically runs `caffeinate` to keep your Mac awake during the spoofing session, so no additional tools or steps are necessary.
